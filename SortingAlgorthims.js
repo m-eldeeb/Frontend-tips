@@ -22,6 +22,8 @@
 // BubbleSort(array);
 // console.log(array);
 
+
+
 /* 
   # Insertion sorting
   # time complexity => O(n^2)
@@ -50,25 +52,28 @@ console.log(array);
   
 */
 
-function QuickSort(arr) {
-  if (arr.length < 2) return arr;
-  let pivot = arr[arr.length - 1];
-  let left = [];
-  let right = [];
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] < pivot) {
-      left.push(arr[i]);
-    } else {
-      right.push(arr[i]);
-    }
-  }
-  return [...QuickSort(left), pivot, ...QuickSort(right)];
-}
+// function QuickSort(arr) {
+//   if (arr.length < 2) return arr;
+//   let pivot = arr[arr.length - 1];
+//   let left = [];
+//   let right = [];
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (arr[i] < pivot) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+//   return [...QuickSort(left), pivot, ...QuickSort(right)];
+// }
 
-arr = [-6, 20, 8, -2, 4];
-console.log(arr);
+// arr = [-6, 20, 8, -2, 4];
+// console.log(arr);
 
-console.log(QuickSort(arr));
+// console.log(QuickSort(arr));
+
+
+
 
 /* 
   # Quick sorting with better space complexity
@@ -116,24 +121,24 @@ console.log(QuickSort(arr));
 */
 
 
-function mergedSort(arr) {
-  if (arr.length < 2) return arr;
-  const mid = Math.floor(arr.length / 2);
-  const leftArray = arr.slice(0, mid);
-  const rightArray = arr.slice(mid);
-  return merge(mergedSort(leftArray), mergedSort(rightArray));
-}
+// function mergedSort(arr) {
+//   if (arr.length < 2) return arr;
+//   const mid = Math.floor(arr.length / 2);
+//   const leftArray = arr.slice(0, mid);
+//   const rightArray = arr.slice(mid);
+//   return merge(mergedSort(leftArray), mergedSort(rightArray));
+// }
 
-function merge(leftArray, rightArray) {
-  const sortedArray = [];
-  while (leftArray.length && rightArray.length) {
-    if (leftArray[0] <= rightArray[0]) {
-      sortedArray.push(leftArray.shift());
-    } else {
-      sortedArray.push(rightArray.shift());
-    }
-  }
-  return [...sortedArray, ...leftArray, ...rightArray];
-}
+// function merge(leftArray, rightArray) {
+//   const sortedArray = [];
+//   while (leftArray.length && rightArray.length) {
+//     if (leftArray[0] <= rightArray[0]) {
+//       sortedArray.push(leftArray.shift());
+//     } else {
+//       sortedArray.push(rightArray.shift());
+//     }
+//   }
+//   return [...sortedArray, ...leftArray, ...rightArray];
+// }
 
-console.log(mergedSort([8, 20, -2, 4, -6]));
+// console.log(mergedSort([8, 20, -2, 4, -6]));
